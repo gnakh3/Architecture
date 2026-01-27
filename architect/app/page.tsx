@@ -1,8 +1,10 @@
-import React from 'react'
+import Home from "./components/organisms/Home/Home"
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <Home />
+    </div>
   )
 }
 
