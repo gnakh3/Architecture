@@ -9,7 +9,7 @@ import Footer from "../../atoms/Footer/Footer"
 
 const Home = () => {
   return (
-    <div className="flex flex-col justify-between bg-white w-full min-h-screen items-center">
+    <div className="flex flex-col justify-between bg-white w-full min-h-screen pl-[165px] pr-[165px]">
       <Header />
       <Welcome />
       <ArchStudio />
