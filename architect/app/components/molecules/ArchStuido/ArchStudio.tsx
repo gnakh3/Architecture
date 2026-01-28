@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import React from 'react'
 import { League_Spartan } from 'next/font/google'
@@ -8,6 +9,7 @@ const leagueSpartan = League_Spartan({
 })
 const ArchStudio = () => {
   return (
+
     <div className={`${leagueSpartan.className} w-full relative mt-48.75 mb-50`}>
           <h1 className='absolute z-10 top-0 left-0 -translate-y-[43%] text-[rgba(238,239,244,1)] text-[250px] font-bold leading-50 tracking-[-5px]'>Welcome</h1>
           
