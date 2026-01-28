@@ -7,10 +7,9 @@ const leagueSpartan = League_Spartan({
   weight: ['100','200','300','400','500','600','700','800','900'],
 })
 
-
 const Welcome = () => {
   return (
-    <div className={`${leagueSpartan.className} w-277.5 max-w-[90%] relative mt-48.75 mb-50`}>
+    <div className={`${leagueSpartan.className} w-full relative mt-48.75 mb-50`}>
       <h1 className='absolute z-10 top-0 left-0 -translate-y-[43%] text-[rgba(238,239,244,1)] text-[250px] font-bold leading-50 tracking-[-5px]'>Welcome</h1>
       
       <div className='flex justify-end gap-31.25'>
