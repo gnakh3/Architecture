@@ -9,7 +9,7 @@ const leagueSpartan = League_Spartan({
 
 const ArchStudio = () => {
   return (
-
+<>
     <div className={`w-full relative 2xl:flex items-center justify-center`} >
           <h1 className='absolute z-10 top-0 max-2xl:left-0 -translate-y-[43%] text-[rgba(238,239,244,1)] text-[250px] font-bold leading-50 tracking-[-5px] max-xl:text-[200px] max-lg:text-[120px] max-sm:hidden 2xl:-translate-x-42.25'>Welcome</h1>
           
@@ -30,7 +30,6 @@ const ArchStudio = () => {
             <Image src='/welcome-img.svg' alt='' width={350} height={568} className='hidden lg:block'/>
           </div>
         </div>
-=======
     <div className={`${leagueSpartan.className} w-full relative mt-48.75 mb-50`}>
       <h1 className='absolute z-10 top-0 left-0 -translate-y-[43%] text-[rgba(238,239,244,1)] text-[250px] font-bold leading-50 tracking-[-5px]'>Welcome</h1>
       
@@ -50,7 +49,7 @@ const ArchStudio = () => {
         <Image src='/welcome-img.svg' alt='' width={350} height={568} />
       </div>
     </div>
->>>>>>> Stashed changes
+    </>
   )
 }
 
