@@ -8,6 +8,7 @@ import Image from "next/image";
 import { EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
 import "swiper/css";
+import SwiperCard from "../../atoms/SwiperCard/SwiperCard";
 
 const slides = [
   {
@@ -18,17 +19,17 @@ const slides = [
   {
     title: "Seraph Station",
     desc: "The Seraph Station project challenged us to design a unique station that would transport people through time. The result is a fresh and futuristic model inspired by space stations.",
-    image: "/Swiper2.svg",
+    image: "/Swiper2.webp",
   },
   {
     title: "Federal II Tower",
     desc: "A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.",
-    image: "/Swiper3.svg",
+    image: "/Swiper3.webp",
   },
   {
     title: "Trinity Bank Tower",
     desc: "Trinity Bank challenged us to design a concept that would reflect the stability and strength of their brand. Our design is a modern take on banking architecture.",
-    image: "/Swiper4.svg",
+    image: "/Swiper4.webp",
   },
 ];
 
@@ -63,20 +64,11 @@ export default function Welcome() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute bottom-0 left-[-64px] flex z-20">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => swiperRef.current?.slideTo(i)}
-            className={`w-16 h-16 text-sm font-bold transition-all duration-200 ${activeIndex === i
-              ? "bg-[#1B1D23] text-white"
-              : "bg-white text-[#7D828F] hover:bg-gray-100"
-              }`}
-          >
-            {String(i + 1).padStart(2, "0")}
-          </button>
-        ))}
-      </div>
+     <SwiperCard
+        slidesLength={slides.length}
+        activeIndex={activeIndex}
+        swiperRef={swiperRef}
+      />    
     </div>
   );
 }
