@@ -1,9 +1,8 @@
-import Header from "../../atoms/Header/Header"
+import React from 'react'
 
 const Contact = () => {
   return (
     <div>
-        <Header />
     </div>      
   )
 }

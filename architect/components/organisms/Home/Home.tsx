@@ -9,13 +9,11 @@ import Footer from "../../atoms/Footer/Footer"
 
 const Home = () => {
   return (
-    <div className="flex flex-col justify-between bg-white w-full h-auto pl-[165px] pr-[165px] gap-20">
-      <Header />
+    <div className="flex flex-col justify-evenly  bg-white w-full h-auto gap-35">
       <Welcome />
       <ArchStudio />
-      <Team />
+      <Team/>
       <Featured />
-      <Footer />
     </div>
   )
 }
