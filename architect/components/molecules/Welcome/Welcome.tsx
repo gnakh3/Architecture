@@ -38,7 +38,7 @@ export default function Welcome() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative w-full h-[720px]">
+    <div className="relative w-full h-[720px] mt-20">
       <Swiper
         modules={[Navigation, EffectFade]}
         effect="fade"

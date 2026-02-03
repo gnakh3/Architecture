@@ -1,10 +1,9 @@
 import Home from "@/components/organisms/Home/Home"
 
-
 const page = () => {
   return (
     <div>
-      <Home />
+        <Home />
     </div>
   )
 }
