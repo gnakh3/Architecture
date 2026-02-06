@@ -10,7 +10,7 @@ const leagueSpartan = League_Spartan({
 const ArchStudio = () => {
   return (
 <>
-    <div className={`w-full relative 2xl:flex items-center justify-center mt-25`} >
+    <div className={`w-full relative 2xl:flex items-center justify-center mt-25 pl-5 pr-5 sm:pl-10 pr-10`} >
           <h1 className='absolute z-10 top-0 max-2xl:left-0 -translate-y-[43%] text-[rgba(238,239,244,1)] text-[250px] font-bold leading-50 tracking-[-5px] max-xl:text-[200px] max-lg:text-[120px] max-sm:hidden 2xl:-translate-x-42.25'>Welcome</h1>
           
           <div className='flex justify-end gap-31.25 max-xl:gap-20'>
