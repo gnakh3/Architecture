@@ -55,7 +55,7 @@ export default function Welcome() {
             >
               <div className="relative z-10 h-full flex items-center">
                 <div className="ml-[10%] max-w-[544px] text-white">
-                  <h1 className="text-[96px] leading-[80px] font-bold whitespace-pre-line">{slide.title}</h1>
+                  <h1 className="text-[48px] leading-[48px] font-bold whitespace-pre-line sm:text-[96px] sm:leading-[80px]">{slide.title}</h1>
                   <p className="mt-10 text-[18px] whitespace-pre-line leading-6">{slide.desc}</p>
                   <button className="mt-[41px] bg-[#1B1D23] w-[252px] h-[72px] text-[18px] font-bold text-center flex items-center justify-center gap-3 hover:bg-[#60636D] hover:scale-105  cursor-pointer transition-all duration-200 ease-in-out"> See Our Portfolio  <Image src="/Arrow.svg" alt="Arrow" width={24} height={24} /> </button>
                 </div>
@@ -64,11 +64,11 @@ export default function Welcome() {
           </SwiperSlide>
         ))}
       </Swiper>
-     <SwiperCard
+      <SwiperCard
         slidesLength={slides.length}
         activeIndex={activeIndex}
         swiperRef={swiperRef}
-      />    
+      />
     </div>
   );
 }
