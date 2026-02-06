@@ -2,10 +2,9 @@
 
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
-import { EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import SwiperCard from "../../atoms/SwiperCard/SwiperCard";
@@ -40,13 +39,14 @@ export default function Welcome() {
   return (
     <div className="relative w-full h-[720px] mt-20">
       <Swiper
-        modules={[Navigation, EffectFade]}
+        modules={[Navigation, EffectFade, Autoplay]}
         effect="fade"
-        onSwiper={(swiper: SwiperType) => (swiperRef.current = swiper)}
-        onSlideChange={(swiper: SwiperType) => setActiveIndex(swiper.activeIndex)}
+        loop={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} 
         className="w-full h-full"
       >
-
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <div
@@ -55,9 +55,14 @@ export default function Welcome() {
             >
               <div className="relative z-10 h-full flex items-center">
                 <div className="ml-[10%] max-w-[544px] text-white">
-                  <h1 className="text-[48px] leading-[48px] font-bold whitespace-pre-line sm:text-[96px] sm:leading-[80px]">{slide.title}</h1>
+                  <h1 className="text-[48px] leading-[48px] font-bold whitespace-pre-line sm:text-[96px] sm:leading-[80px]">
+                    {slide.title}
+                  </h1>
                   <p className="mt-10 text-[18px] whitespace-pre-line leading-6">{slide.desc}</p>
-                  <button className="mt-[41px] bg-[#1B1D23] w-[252px] h-[72px] text-[18px] font-bold text-center flex items-center justify-center gap-3 hover:bg-[#60636D] hover:scale-105  cursor-pointer transition-all duration-200 ease-in-out"> See Our Portfolio  <Image src="/Arrow.svg" alt="Arrow" width={24} height={24} /> </button>
+                  <button className="mt-[41px] bg-[#1B1D23] w-[252px] h-[72px] text-[18px] font-bold text-center flex items-center justify-center gap-3 hover:bg-[#60636D] hover:scale-105  cursor-pointer transition-all duration-200 ease-in-out">
+                    See Our Portfolio
+                    <Image src="/Arrow.svg" alt="Arrow" width={24} height={24} />
+                  </button>
                 </div>
               </div>
             </div>
