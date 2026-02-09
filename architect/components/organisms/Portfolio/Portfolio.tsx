@@ -150,12 +150,12 @@ function Portfolio() {
 
   return (
   // Portfolio Section
-    <div className="portfolio-container">
-      <div className=" w-full  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 pt-15 pb-15 bg bg-white  ">
+    <div className="portfolio-container w-full flex justify-center items-center ">
+      <div className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 pt-15 pb-15 bg bg-white  ">
           {portfolio.map((item) => (
-            <div key={item.id} className="relative cursor-pointer overflow-hidden rounded-lg transition-all duration-700 ease-in-out hover:scale-102 hover:-translate-y-1 hover:opacity-70"     >
+            <div key={item.id} className="flex relative cursor-pointer overflow-hidden rounded-lg transition-all duration-700 ease-in-out hover:scale-102 hover:-translate-y-1 hover:opacity-70"     >
               <picture>
-                <source media="(max-width: 600px)" srcSet={item.mobileimage} />
+                <source media="(max-width: 660px)" srcSet={item.mobileimage} />
                 <source media="(max-width: 1024px)" srcSet={item.tabletimage} />
                 <img 
                 src={item.desctopimage} 
