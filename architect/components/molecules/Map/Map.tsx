@@ -29,7 +29,7 @@ const Map = () => {
   const positions = locations.map(loc => loc.position);
 
   return (
-    <MapContainer zoom={5} className='w-full h-140 max-sm:h-91.75 max-sm:-mx-8 max-sm:w-[calc(100%+64px)] mt-20'>
+    <MapContainer zoom={5} className='w-full h-140 max-sm:h-91.75 z-10'>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
