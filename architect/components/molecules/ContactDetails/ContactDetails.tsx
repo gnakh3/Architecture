@@ -1,29 +1,43 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 
 const ContactDetails = () => {
-    return (
-        <div className='flex flex-col gap-18.25'>
-            <div className='w-16.25 h-px bg-[#C8CCD8] '></div>
-            <div className='flex gap-[8%]'>
-                <div className='font-bold text-[72px] leading-16 tracking-[-2px] h-32 w-87.5 text-[#1B1D23]'>Contact Details</div>
-                <div className='text-[18px] font-bold w-87.5 gap-1 flex flex-col text-[#60636D] leading-6'>
-                    <div>Main Office</div>
-                    <div className='font-normal w-[]'>Mail :			archone@mail.com<br />
-                        Address :		1892  Chenoweth Drive TN<br/>
-                        Phone :		931-492-3451</div>
-                    <div className='flex justify-between w-37.75 pt-13.75 text-[#1B1D23] hover:underline cursor-pointer transition ease-in-out duration-300 hover:scale-103'>View on Map <Image src="/contactarrow.svg" alt="arrow" width={24} height={18} /></div>
-                </div>
-                <div className='text-[18px] font-bold w-87.5 gap-1 flex flex-col text-[#60636D] leading-6'>
-                    <div>Office II</div>
-                    <div className='font-normal'>Mail :			archtwo@mail.com<br />
-                        Address :		3399  Wines Lane TX<br/>
-                        Phone :		832-123-4321</div>
-                    <div className='flex justify-between w-37.75 pt-13.75 text-[#1B1D23] hover:underline cursor-pointer transition ease-in-out duration-300 hover:scale-103'>View on Map <Image src="/contactarrow.svg" alt="arrow" width={24} height={18} /></div>
-                </div>
-            </div>
+  return (
+    <div className="flex flex-col gap-18.25 overflow-hidden">
+      <div className="w-16.25 h-px bg-[#C8CCD8] ml-[10%] md:ml-0"></div>
+      <div className="flex flex-col md:flex-col lg:flex-row lg:gap-[8%] w-full md:ml-0 ml-[10%]">
+        <div className="font-bold text-[72px] leading-16 tracking-[-2px] h-32 w-[311px] md:w-full text-[#1B1D23] mb-8 lg:mb-0">
+          Contact Details
         </div>
-    )
-}
+        <div className="text-[18px] font-bold w-full max-w-[700px] gap-1 flex flex-col text-[#60636D] leading-6 mb-8 lg:mb-0">
+          <div className="flex lg:flex-col md:flex-row w-full md:justify-between md:items-center flex-col">
+            <div className="font-normal mb-4">
+              <div className="font-bold">Main Office</div>
+              Mail: archone@mail.com<br />
+              Address: 1892 Chenoweth Drive TN<br />
+              Phone: 931-492-3451
+            </div>
+            <div className="flex lg:mr-30 flex-row items-start gap-2 text-[#1B1D23] hover:underline cursor-pointer transition ease-in-out duration-300 hover:scale-103">
+              View on Map <Image src="/contactarrow.svg" alt="arrow" width={24} height={18} />
+            </div>
+          </div>
+        </div>
+        <div className="text-[18px] font-bold w-full max-w-[700px] gap-1 flex flex-col text-[#60636D] leading-6">
+          <div className="flex lg:flex-col md:flex-row w-full md:justify-between md:items-center flex-col">
+            <div className="font-normal mb-4">
+              <div className="font-bold">Office II</div>
+              Mail: archtwo@mail.com<br />
+              Address: 3399 Wines Lane TX<br />
+              Phone: 832-123-4321
+            </div>
+            <div className="flex lg:mr-20 flex-row items-start gap-2 text-[#1B1D23] hover:underline cursor-pointer transition ease-in-out duration-300 hover:scale-103">
+              View on Map <Image src="/contactarrow.svg" alt="arrow" width={24} height={18} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default ContactDetails
+export default ContactDetails;
