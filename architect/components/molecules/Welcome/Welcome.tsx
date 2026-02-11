@@ -8,6 +8,7 @@ import Image from "next/image";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import SwiperCard from "../../atoms/SwiperCard/SwiperCard";
+import Link from "next/dist/client/link";
 
 const slides = [
   {
@@ -59,10 +60,12 @@ export default function Welcome() {
                     {slide.title}
                   </h1>
                   <p className="mt-10 text-[18px] whitespace-pre-line leading-6">{slide.desc}</p>
+                <Link href="/portfolio">
                   <button className="mt-[41px] bg-[#1B1D23] w-[252px] h-[72px] text-[18px] font-bold text-center flex items-center justify-center gap-3 hover:bg-[#60636D] hover:scale-105  cursor-pointer transition-all duration-200 ease-in-out">
                     See Our Portfolio
                     <Image src="/Arrow.svg" alt="Arrow" width={24} height={24} />
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

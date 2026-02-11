@@ -13,7 +13,7 @@ type PortfolioItem = {
 
 function Portfolio() {
   const portfolioItems = [
-    { 
+    {
       id: 1,
       title: "Seraph Station",
       date: "September 2019",
@@ -21,7 +21,7 @@ function Portfolio() {
       tabletimage: "/Portfolio/TabletSeraph.webp",
       mobileimage: "/Portfolio/mobile1.webp",
     },
-    { 
+    {
       id: 2,
       title: "Eebox Building",
       date: "August 2017",
@@ -35,7 +35,7 @@ function Portfolio() {
       date: "March 2017",
       desctopimage: "/Portfolio/Federal.webp",
       tabletimage: "/Portfolio/TabletFederal.webp",
-      mobileimage: "/Portfolio/mobile3.webp",  
+      mobileimage: "/Portfolio/mobile3.webp",
     }
     , {
       id: 4,
@@ -51,13 +51,13 @@ function Portfolio() {
       date: "October 2015",
       desctopimage: "/Portfolio/LeProtype.webp",
       tabletimage: "/Portfolio/TabletLePrototype.webp",
-      mobileimage: "/Portfolio/mobile5.webp", 
+      mobileimage: "/Portfolio/mobile5.webp",
     },
     {
       id: 6,
       title: "228B Tower",
       date: "April 2015",
-      desctopimage: "/Portfolio/228BTower.webp",  
+      desctopimage: "/Portfolio/228BTower.webp",
       tabletimage: "/Portfolio/Tablet228B.webp",
       mobileimage: "/Portfolio/mobile6.webp",
     },
@@ -123,22 +123,21 @@ function Portfolio() {
     if (storedPortfolio) {
       setPortfolio(JSON.parse(storedPortfolio));
     }
-    },[]);
+  }, []);
 
-    React.useEffect(() => {
-      localStorage.setItem('portfolio', JSON.stringify(portfolio));
-    }, [portfolio]);
+  React.useEffect(() => {
+    localStorage.setItem('portfolio', JSON.stringify(portfolio));
+  }, [portfolio]);
 
-    function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
-      const file = event.target.files?.[0];
-      if (file) {
+  function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (file) {
       const url = URL.createObjectURL(file)
-        setNewImageUrl(url);
-      }else 
-        {        
-        setNewImageUrl('');
-      }
+      setNewImageUrl(url);
+    } else {
+      setNewImageUrl('');
     }
+  }
 
   const handleAddPortfolioItem = (newItem: PortfolioItem) => {
     setPortfolio([...portfolio, newItem]);
@@ -149,48 +148,54 @@ function Portfolio() {
   };
 
   return (
-  // Portfolio Section
     <div className="portfolio-container w-full flex justify-center items-center ">
+      <Image
+        src="/portfdecor.svg"
+        alt="Decoration"
+        width={24}
+        height={272}
+        className="absolute left-12 top-0 hidden min-[774px]:block"
+      />
       <div className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 pt-15 pb-15 bg bg-white  ">
-          {portfolio.map((item) => (
-            <div key={item.id} className="flex relative cursor-pointer overflow-hidden rounded-lg transition-all duration-700 ease-in-out hover:scale-102 hover:-translate-y-1 hover:opacity-70"     >
-              <picture>
-                <source media="(max-width: 660px)" srcSet={item.mobileimage} />
-                <source media="(max-width: 1024px)" srcSet={item.tabletimage} />
-                <img 
-                src={item.desctopimage} 
-                alt={item.title} 
-                className="lg:w-88 lg:h-140 md:w-143 md:h-60 sm:w-78 sm:h-60 object-cover" 
-                />
-                </picture>
-              <div className="absolute bottom-8 pl-5 z-10 cursor-pointer ">
-                <h3 className="text-[32px] font-bold  text-white ">{item.title}</h3>
-                <p className="text-gray-200 text-[18px]">{item.date}</p>
-              </div>
+        {portfolio.map((item) => (
+          <div key={item.id} className="flex relative cursor-pointer overflow-hidden rounded-lg transition-all duration-700 ease-in-out hover:scale-102 hover:-translate-y-1 hover:opacity-70"     >
+            <picture>
+              <source media="(max-width: 660px)" srcSet={item.mobileimage} />
+              <source media="(max-width: 1024px)" srcSet={item.tabletimage} />
+              <img
+                src={item.desctopimage}
+                alt={item.title}
+                className="lg:w-88 lg:h-140 md:w-143 md:h-60 sm:w-78 sm:h-60 object-cover"
+              />
+            </picture>
+            <div className="absolute bottom-8 pl-5 z-10 cursor-pointer ">
+              <h3 className="text-[32px] font-bold  text-white ">{item.title}</h3>
+              <p className="text-gray-200 text-[18px]">{item.date}</p>
             </div>
-          ))}
-          <div>
+          </div>
+        ))}
+        <div>
         </div>
 
-    {/* Add Portfolio Item */}
+        {/* Add Portfolio Item */}
 
-          <div className="col-span-1 md:col-span-1 lg:col-span-3 flex justify-center items-center h-full w-full">
-            <button 
+        <div className="col-span-1 md:col-span-1 lg:col-span-3 flex justify-center items-center h-full w-full">
+          <button
             className="w-auto h-18 flex items-center justify-center gap-3 bg-[#1B1D23] px-8 py-5 text-lg font-bold text-white hover:bg-[#60636D] hover:scale-102 transition-all duration-500"
             onClick={() => setShowForm(true)}
-            >
-                Add Portfolio Item          
-                <span className="text-3xl">+</span> 
-            </button>              
-          </div>
+          >
+            Add Portfolio Item
+            <span className="text-3xl">+</span>
+          </button>
+        </div>
 
-      {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8">
-            <h2 className="text-4xl font-bold flex justify-center mb-6">Add New Portfolio Item</h2>
-               <form onSubmit={(e) => {
+        {showForm && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+            <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8">
+              <h2 className="text-4xl font-bold flex justify-center mb-6">Add New Portfolio Item</h2>
+              <form onSubmit={(e) => {
                 e.preventDefault();
-                const newItem: PortfolioItem = {  
+                const newItem: PortfolioItem = {
                   id: portfolio.length + 1,
                   title: newTitle,
                   date: newDate,
@@ -208,22 +213,22 @@ function Portfolio() {
                   <input
                     id="title"
                     type="text"
-                    value={newTitle}  
+                    value={newTitle}
                     onChange={(e) => setNewTitle(e.target.value)}
                     placeholder="e.g. Modern Architecture"
                     className="w-full px-3 py-2 border rounded"
                     required
                   />
                 </div>
-                <div className="mb-4">  
+                <div className="mb-4">
                   <label className="block text-[#73767c] text-[18px] font-bold mb-2" htmlFor="date">
                     Date
                   </label>
                   <input
                     id="date"
-                    type="text" 
+                    type="text"
                     value={newDate}
-                    onChange={(e) => {setNewDate(e.target.value)}}                  
+                    onChange={(e) => { setNewDate(e.target.value) }}
                     placeholder="e.g. September 2024"
                     className="w-full px-3 py-2 border rounded"
                     required
@@ -232,17 +237,17 @@ function Portfolio() {
 
                 <div className="mb-4">
                   <label className="block text-[#73767c] text-[18px] font-bold mb-2" htmlFor="file">
-                    Upload Image 
+                    Upload Image
                   </label>
                   <input
                     id="file"
-                    type="file"                    
+                    type="file"
                     accept="image/*"
                     onChange={handleFileChange}
                     className="w-full px-3 py-2 border rounded"
                   />
                 </div>
-               
+
                 <button type="submit" className="px-4 py-2 bg-[#1B1D23] text-white rounded hover:bg-green-700 transition-colors duration-200">
                   Add Item
                 </button>
@@ -250,43 +255,44 @@ function Portfolio() {
                 <button
                   type="button"
                   className="ml-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-red-600 transition-colors duration-200"
-                  onClick={() => {setShowForm(false);
-                  setNewTitle('');
-                  setNewDate('');
-                  setNewImageUrl('');
+                  onClick={() => {
+                    setShowForm(false);
+                    setNewTitle('');
+                    setNewDate('');
+                    setNewImageUrl('');
                   }
                   }
                 >
                   Cancel
                 </button>
               </form>
-          </div>
+            </div>
             <div className=" bg-[#777981] rounded-xl w-100 h-113 p-10 flex items-center justify-center">
-                {newImageUrl ? (
-                  <div className="w-full h-full relative rounded-lg overflow-hidden">
-                    <img 
-                      src={newImageUrl} 
-                      alt="Preview" 
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-8 left-5 z-10">
-                      <h3 className="text-[32px] font-bold text-white">
-                        {newTitle || 'Portfolio Title'}
-                      </h3>
-                      <p className="text-gray-200 text-[18px]">
-                        {newDate || 'Select Date'}
-                      </p>
-                    </div>
+              {newImageUrl ? (
+                <div className="w-full h-full relative rounded-lg overflow-hidden">
+                  <img
+                    src={newImageUrl}
+                    alt="Preview"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-8 left-5 z-10">
+                    <h3 className="text-[32px] font-bold text-white">
+                      {newTitle || 'Portfolio Title'}
+                    </h3>
+                    <p className="text-gray-200 text-[18px]">
+                      {newDate || 'Select Date'}
+                    </p>
+                  </div>
                 </div>
-                    ) : (
-              <div className="text-center text-gray-400">
-                <p className="text-xl">Upload an image to preview</p>
-              </div>
-            )}
+              ) : (
+                <div className="text-center text-gray-400">
+                  <p className="text-xl">Upload an image to preview</p>
+                </div>
+              )}
+            </div>
           </div>
-       </div> 
- )}
-    </div>
+        )}
+      </div>
     </div>
   )
 }
