@@ -10,13 +10,6 @@ const Header = () => {
   return (
     <header className="relative w-full z-50">
       <div className="flex items-center justify-between sm:justify-start w-full max-w-[1600px] h-[40px] pt-[56px] mx-auto px-4 sm:px-6 relative">
-        <Image
-          src="/Decoration.svg"
-          alt="Decoration"
-          width={24}
-          height={272}
-          className="hidden sm:block absolute left-[-120] top-0"
-        />
         <Link href="/" className="hover:scale-105 transition-transform duration-200 z-50">
           <Image src="/logo.svg" alt="Logo" width={100} height={100} />
         </Link>
