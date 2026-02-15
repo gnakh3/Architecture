@@ -1,10 +1,25 @@
-import React from 'react'
-import Image from 'next/image'
-import Bitmap from '@/public/Bitmap.webp';
-import Link from 'next/link';
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import Bitmap from "@/public/Bitmap.webp";
+import Link from "next/link";
+import { motion, cubicBezier } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 25 },
+  show: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
+      delay,
+    },
+  }),
+};
 
 const Team = () => {
-
   return (
   <div className="relative h-140">
     <Image 
@@ -27,9 +42,7 @@ const Team = () => {
       </Link>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
+export default Team;
 
-
-export default Team

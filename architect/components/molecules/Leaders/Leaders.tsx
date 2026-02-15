@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion, easeInOut } from "framer-motion";
 
 const Leader = [
   {
@@ -23,60 +26,58 @@ const Leader = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  show: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: easeInOut, delay },
+  }),
+};
+
 const Leaders = () => {
   return (
     <section className="w-full flex justify-center mb-40 px-4">
-      <div
-        className="
-          w-full max-w-[1200px]
-          flex flex-col lg:flex-row
-          items-start
-          gap-16
-        "
-      >
-        <h2
-          className="
-            font-bold text-[#1B1D23]
-            text-[40px] md:text-[56px] lg:text-[72px]
-            leading-tight tracking-[-2px]
-            max-w-[510px]
-          "
+      <div className="w-full max-w-[1200px] flex flex-col lg:flex-row items-start gap-16">
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          custom={0}
+          className="font-bold text-[#1B1D23] text-[40px] md:text-[56px] lg:text-[72px] leading-tight tracking-[-2px] max-w-[510px]"
         >
           The Leaders
-        </h2>
-        <div
-          className="
-            grid
-            grid-cols-1
-            md:grid-cols-2
-            gap-x-7.5 gap-y-15.75
-            w-full
-          "
-        >
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7.5 gap-y-15.75 w-full">
           {Leader.map((leader, index) => (
-            <div key={index} className="flex flex-col gap-4">
+            <motion.div
+              key={index}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              custom={index * 0.08}
+              className="flex flex-col gap-4"
+            >
               <div className="relative w-full max-w-[350px] h-80 overflow-hidden group cursor-pointer">
-                <Image
-                  src={leader.image}
-                  alt={leader.name}
-                  height={320}
-                  width={350}
-                  className="w-full h-full object-cover transition-all duration-300"
-                />
-                <div
-                  className="
-                    absolute inset-0 bg-black
-                    opacity-0 group-hover:opacity-50
-                    transition-opacity duration-300
-                  "
-                />
-                <div
-                  className="
-                    absolute inset-0 flex items-center justify-center gap-6
-                    opacity-0 group-hover:opacity-100
-                    transition-opacity duration-300
-                  "
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                  className="w-full h-full"
                 >
+                  <Image
+                    src={leader.image}
+                    alt={leader.name}
+                    height={320}
+                    width={350}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+
+                <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Image
                     src="/linkedin.svg"
                     alt="LinkedIn"
@@ -102,7 +103,7 @@ const Leaders = () => {
                   {leader.position}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
