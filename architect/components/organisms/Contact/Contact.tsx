@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const Contact = () => {
   return (
-    <div className="flex flex-col justify-evenly  bg-white w-full h-auto gap-35">
+    <div className="flex flex-col justify-evenly  bg-white w-full h-auto gap-30">
       <Image
         src="/contactdecor.svg"
         alt="Decoration"

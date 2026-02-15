@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Heritage = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -12,9 +13,7 @@ const Heritage = () => {
   const [text3, setText3] = useState("");
 
   useEffect(() => {
-    setTitle(
-      localStorage.getItem("heritage_title") || "Our Heritage"
-    );
+    setTitle(localStorage.getItem("heritage_title") || "Our Heritage");
 
     setText1(
       localStorage.getItem("heritage_text1") ||
@@ -60,14 +59,14 @@ const Heritage = () => {
 
   return (
     <section className="w-full flex justify-center px-4 relative">
-      <div
-        className="
-          w-full max-w-[1200px]
-          flex items-center justify-between
-          lg:h-[568px]
-        "
-      >
-        <div className="flex flex-col justify-between gap-8 max-w-[445px] relative">
+      <div className="w-full max-w-[1200px] flex items-center justify-between lg:h-[568px]">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col justify-between gap-8 max-w-[445px] relative"
+        >
           <div className="absolute right-0 -top-6 flex gap-4 text-[20px] cursor-pointer">
             {!isEditing ? (
               <span
@@ -78,10 +77,7 @@ const Heritage = () => {
               </span>
             ) : (
               <>
-                <span
-                  onClick={onSave}
-                  className="hover:scale-110 transition-all"
-                >
+                <span onClick={onSave} className="hover:scale-110 transition-all">
                   ✅
                 </span>
                 <span
@@ -93,11 +89,25 @@ const Heritage = () => {
               </>
             )}
           </div>
-          <div className="w-16 h-px bg-[#C8CCD8]" />
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
+            className="w-16 h-px bg-[#C8CCD8]"
+          />
+
           {!isEditing ? (
-            <h2 className="font-bold text-[#1B1D23] tracking-[-2px] text-[40px] md:text-[56px] lg:text-[72px] leading-tight">
+            <motion.h2
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
+              className="font-bold text-[#1B1D23] tracking-[-2px] text-[40px] md:text-[56px] lg:text-[72px] leading-tight"
+            >
               {title}
-            </h2>
+            </motion.h2>
           ) : (
             <input
               value={title}
@@ -105,7 +115,14 @@ const Heritage = () => {
               className="font-bold text-[#1B1D23] tracking-[-2px] text-[40px] md:text-[56px] lg:text-[72px] leading-tight outline-none border-b border-[#C8CCD8] focus:border-[#1B1D23] bg-transparent"
             />
           )}
-          <div className="flex flex-col gap-5 font-medium text-[#60636D] text-[16px] md:text-[18px] leading-6">
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.18 }}
+            className="flex flex-col gap-5 font-medium text-[#60636D] text-[16px] md:text-[18px] leading-6"
+          >
             {!isEditing ? (
               <>
                 <p>{text1}</p>
@@ -131,10 +148,15 @@ const Heritage = () => {
                 />
               </>
             )}
-          </div>
-        </div>
-
-        <div className="hidden lg:block">
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.08 }}
+          className="hidden lg:block"
+        >
           <Image
             src="/heritage.webp"
             alt="Heritage"
@@ -142,7 +164,7 @@ const Heritage = () => {
             height={568}
             className="object-cover"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
