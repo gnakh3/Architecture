@@ -1,6 +1,7 @@
 'use client'
-import { motion } from 'framer-motion';
-import react from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { filter } from 'framer-motion/m';
+import React, { use } from 'react'
 
 export type PortfolioCardProps = {
   id: number;
