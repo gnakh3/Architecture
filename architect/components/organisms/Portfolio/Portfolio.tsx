@@ -12,73 +12,73 @@ const defaultPortfolioItems: PortfolioItem[] = [
     id: 1,
     title: "Seraph Station",
     date: "September 2019",
-    image: "/Portfolio/Seraph.webp",
+    image: "Portfolio/Seraph.webp",
   },
   {
     id: 2,
     title: "Eebox Building",
     date: "August 2017",
-    image: "/Portfolio/Eebox.webp",
+    image: "Portfolio/Eebox.webp",
   },
   {
     id: 3,
     title: "Federal II Tower",
     date: "March 2017",
-    image: "/Portfolio/Federal.webp",
+    image: "Portfolio/Federal.webp",
   },
   {
     id: 4,
     title: "Project Del Sol",
     date: "January 2016",
-    image: "/Portfolio/Project.webp",
+    image: "Portfolio/Project.webp",
   },
   {
     id: 5,
     title: "Le Prototype",
     date: "October 2015",
-    image: "/Portfolio/LeProtype.webp",
+    image: "Portfolio/LeProtype.webp",
   },
   {
     id: 6,
     title: "228B Tower",
     date: "April 2015",
-    image: "/Portfolio/228BTower.webp",
+    image: "Portfolio/228BTower.webp",
   },
   {
     id: 7,
     title: "Grand Edelweiss Hotel",
     date: "December 2013",
-    image: "/Portfolio/GrandED.webp",
+    image: "Portfolio/GrandED.webp",
   },
   {
     id: 8,
     title: "Netcry Tower",
     date: "August 2012",
-    image: "/Portfolio/Netcry.webp",
+    image: "Portfolio/Netcry.webp",
   },
   {
     id: 9,
     title: "Hypers",
     date: "January 2012",
-    image: "/Portfolio/Hypers.webp",
+    image: "Portfolio/Hypers.webp",
   },
   {
     id: 10,
     title: "SXIV Tower",
     date: "March 2011",
-    image: "/Portfolio/SXIVTower.webp",
+    image: "Portfolio/SXIVTower.webp",
   },
   {
     id: 11,
     title: "Trinity Bank Tower",
     date: "September 2010",
-    image: "/Portfolio/Trinty.webp",
+    image: "Portfolio/Trinty.webp",
   },
   {
     id: 12,
     title: "Project Paramour",
     date: "February 2008",
-    image: "/Portfolio/ProjectParamour.webp",
+    image: "Portfolio/ProjectParamour.webp",
   }
 ];
 
@@ -133,5 +133,3 @@ export default function Portfolio() {
     </div>
   )
 }
-      
-  
