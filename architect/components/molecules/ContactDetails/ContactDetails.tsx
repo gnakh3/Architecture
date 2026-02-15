@@ -21,7 +21,6 @@ const ContactDetails = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
     >
-      {/* line */}
       <motion.div
         className="w-16.25 h-px bg-[#C8CCD8] ml-[10%] md:ml-0"
         variants={fadeUp}
@@ -29,7 +28,6 @@ const ContactDetails = () => {
       />
 
       <div className="flex flex-col md:flex-col lg:flex-row lg:gap-[8%] w-full md:ml-0 ml-[10%]">
-        {/* title */}
         <motion.div
           className="font-bold text-[72px] leading-16 tracking-[-2px] h-32 w-[311px] md:w-full text-[#1B1D23] mb-8 lg:mb-0"
           variants={fadeUp}
