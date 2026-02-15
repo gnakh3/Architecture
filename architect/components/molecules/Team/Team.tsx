@@ -14,8 +14,8 @@ const Team = () => {
       className="object-cover" 
     />
     
-    <div className="relative z-10 pt-41.25 lg:pl-32.5 md:pl-32.5 sm:pl-10">
-      <div className="flex flex-col gap-6.25">
+    <div className="relative z-10 pt-41.25 lg:pl-32.5 md:pl-32.5 pl-7">
+     <div className="flex flex-col gap-6.25">
         <h1 className=" font-bold text-5xl lg:text-7xl md:text-7xl leading-16 tracking-tight text-white">
           Small team,<br/> big ideas
         </h1>
