@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const ContactProjects = () => {
   return (
-    <div className="relative mt-14 lg:flex lg:items-center lg:justify-between lg:h-[720px] lg:w-full h-165 overflow-x-hidden md:overflow-visible">
+    <div className="relative mt-14 lg:flex lg:items-center lg:justify-between lg:h-[720px] lg:w-full h-[72vh] overflow-x-hidden md:overflow-visible">
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ const ContactProjects = () => {
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
         className="
-          w-[80vw] left-0 h-[48vh] flex justify-center items-center top-[45vh] bg-white absolute
+          w-[80vw] left-0 h-[43vh] flex justify-center items-center top-[28vh] bg-white absolute
           lg:h-[503px] lg:w-[793px] lg:bottom-0 lg:left-[500px]
           md:w-[552px] md:h-[431px] md:left-[100px]
           lg:top-[250px]
