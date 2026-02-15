@@ -12,7 +12,7 @@ const SuccessCard = ({ isOpen, onClose, name, email }: SuccessCardProps) => {
 
     return (
         <div className="fixed inset-0 z-100 flex items-center justify-center bg-[#0e121b]/40 backdrop-blur-sm">
-            <div className="relative w-105 max-w-[90%] bg-white rounded-2xl px-8 pt-8 pb-10 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+            <div className="relative w-105 max-w-[90%] bg-white px-8 pt-8 pb-10 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
 
                 <button onClick={onClose} className="absolute top-5 right-5 cursor-pointer text-[rgba(96,99,109,1)] hover:text-[rgba(27,29,35,1)]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>

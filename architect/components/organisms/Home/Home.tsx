@@ -9,7 +9,7 @@ import Image from "next/image"
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col justify-evenly  bg-white w-full h-auto gap-35 max-w-[100vw]">
+      <div className="flex flex-col justify-evenly  bg-white w-full h-auto gap-30 max-w-[100vw]">
         <Image
           src="/Decoration.svg"
           alt="Decoration"
@@ -22,7 +22,7 @@ const Home = () => {
         <Team />
         <Featured />
       </div>
-      <div >
+      <div>
         <footer />
       </div>
     </>
